@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:fluxo_todo_list/features/todo/domain/entities/todo_entity.dart';
 
 abstract class TodoRepository {
-  Future<Either<String, ListTodoEntity>> getListTodo();
+  Future<Either<String, List<TodoEntity>>> getListTodo();
   Future<Either<String, TodoEntity>> getDetailTodo(int id);
   Future<Either<String, Unit>> createTodo(TodoEntity todo);
   Future<Either<String, Unit>> updateTodo(TodoEntity todo);

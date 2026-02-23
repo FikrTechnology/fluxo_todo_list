@@ -12,7 +12,7 @@ class GetTodoUsecase {
 
   GetTodoUsecase(this.repository);
 
-  Future<Either<String, ListTodoEntity>> call() async {
+  Future<Either<String, List<TodoEntity>>> call() async {
     return await repository.getListTodo();
   }
 }

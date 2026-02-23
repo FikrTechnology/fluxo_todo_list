@@ -5,24 +5,18 @@
 //    database, dan juga untuk mengirim data ke API atau database.
 
 
-class ListTodoEntity {
-  final List<TodoEntity> listTodo;
-  
-  ListTodoEntity({
-    required this.listTodo,
-  });
-}
+import 'package:equatable/equatable.dart';
 
-class TodoEntity {
+class TodoEntity extends Equatable {
   final int id;
   final String title;
   final String category;
   final String description;
-  final String activityDate;
+  final DateTime activityDate;
   final String status;
-  final String createdAt;
+  final DateTime createdAt;
 
-  TodoEntity({
+  const TodoEntity({
     required this.id,
     required this.title,
     required this.category,
@@ -31,4 +25,15 @@ class TodoEntity {
     required this.status,
     required this.createdAt,
   });
+
+  @override
+  List<Object?> get props => [
+    id,
+    title,
+    category,
+    description,
+    activityDate,
+    status,
+    createdAt
+  ];
 }
