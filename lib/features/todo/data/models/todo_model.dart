@@ -55,6 +55,7 @@ class TodoModel extends Equatable implements TodoEntity {
   }
 
   // Map ke domain entity
+  @override
   TodoEntity toEntity() => TodoEntity(
     id: id, 
     title: title, 
@@ -65,8 +66,42 @@ class TodoModel extends Equatable implements TodoEntity {
     createdAt: createdAt
   );
 
+  // Map dari domain entity
+  TodoModel copyWith({
+    int? id,
+    String? title,
+    String? category,
+    String? description,
+    DateTime? activityDate,
+    String? status,
+    DateTime? createdAt,
+  }) {
+    return TodoModel(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      category: category ?? this.category,
+      description: description ?? this.description,
+      activityDate: activityDate ?? this.activityDate,
+      status: status ?? this.status,
+      createdAt: createdAt ?? this.createdAt,
+    );
+  }
+
+  // Factory dari Entity (untuk di pakai di repository impl)
+  factory TodoModel.fromEntity(TodoEntity entity) {
+    return TodoModel(
+      id: entity.id,
+      title: entity.title,
+      category: entity.category,
+      description: entity.description,
+      activityDate: entity.activityDate,
+      status: entity.status,
+      createdAt: entity.createdAt,
+    );
+  }
+
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
     id,
     title,
     category,
