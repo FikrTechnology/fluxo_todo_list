@@ -10,6 +10,7 @@ class AppColors {
   static const Color lightGray = Color(0xFF94A3B8);
   static const Color blue = Color(0xFF135BEC);
   static const Color purple = Color(0xFF4F46E5);
+  static const Color splash = Color(0xFF101622);
 
   // Secondary Colrs
   static const Color lightning = Color(0xFFA5B4FC);
