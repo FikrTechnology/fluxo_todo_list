@@ -1,4 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluxo_todo_list/core/injection_container.dart';
+import 'package:fluxo_todo_list/features/todo/presentation/bloc/todo_bloc.dart';
 import 'package:fluxo_todo_list/features/todo/presentation/screen/home_screen.dart';
 import 'package:fluxo_todo_list/features/todo/presentation/screen/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -17,7 +19,12 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/home',
       name: 'home',
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) {
+        return BlocProvider(
+          create: (_) => sl<TodoBloc>()..add(FetchTodoEvent()),
+          child: const HomeScreen(),
+        );
+      },
     )
   ]
 );

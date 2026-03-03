@@ -20,6 +20,7 @@ class AppColors {
   static const Color red = Color(0xFFEF4444);
   static const Color orange = Color(0xFFD97706);
   static const Color crystalPeak = Color(0xFFDBEAFE);
+  static const Color lavenderBlue = Color(0xFFC7D2FE);
 
   // Gradients
   static const LinearGradient primaryGradient = LinearGradient(

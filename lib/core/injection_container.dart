@@ -13,6 +13,7 @@ import 'package:fluxo_todo_list/features/todo/domain/usecase/delete_todo_usecase
 import 'package:fluxo_todo_list/features/todo/domain/usecase/get_detail_todo_usecase.dart';
 import 'package:fluxo_todo_list/features/todo/domain/usecase/get_todo_usecase.dart';
 import 'package:fluxo_todo_list/features/todo/domain/usecase/update_todo_usecase.dart';
+import 'package:fluxo_todo_list/features/todo/presentation/bloc/todo_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
@@ -20,7 +21,12 @@ final sl = GetIt.instance;
 Future<void> init() async {
   // Features - Todo
   // Blocs
-  // sl.registerFactory();
+  sl.registerFactory(
+    () => TodoBloc(
+      getTodoUsecase: sl(),
+      createTodoUsecase: sl(),
+    ),
+  );
 
   // User cases
   sl.registerLazySingleton(() => GetTodoUsecase(sl()));
