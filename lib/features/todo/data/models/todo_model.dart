@@ -20,7 +20,7 @@ class TodoModel extends Equatable implements TodoEntity {
   @override
   final DateTime createdAt;
 
-  TodoModel({
+  const TodoModel({
     required this.id,
     required this.title,
     required this.category,

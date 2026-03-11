@@ -23,7 +23,6 @@ class AppTheme {
       foregroundColor: AppColors.white,
     ),
     cardColor: AppColors.black,
-    dialogBackgroundColor: AppColors.primary,
     inputDecorationTheme: const InputDecorationTheme(
       filled: true,
       fillColor: AppColors.black,
@@ -45,6 +44,7 @@ class AppTheme {
       bodySmall: TextStyle(color: AppColors.lightGray),
       labelLarge: TextStyle(color: AppColors.white),
       labelSmall: TextStyle(color: AppColors.lightGray),
-    ),
+    ), 
+    dialogTheme: DialogThemeData(backgroundColor: AppColors.primary),
   );
 }
